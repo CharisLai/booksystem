@@ -17,10 +17,15 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint \"**/*.js\" --fix",
+    "test": "mocha tests --exit --recursive --timeout 5000"
   },
   "keywords": [],
   "author": "CharisLai",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-config-standard": "^17.1.0"
+  }
 }
