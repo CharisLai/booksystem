@@ -3,15 +3,16 @@ const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     name: DataTypes.STRING,
+    appellation: DataTypes.STRING,
+    password: DataTypes.STRING,
     email: DataTypes.STRING,
-    birthday: DataTypes.DATEONLY,
-    phone: DataTypes.INTEGER,
+    birthday: DataTypes.DATE,
     address: DataTypes.STRING,
-    readertype: DataTypes.STRING,
-    expirydate: DataTypes.DATEONLY
+    phone: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',
+    tableName: 'Users',
     underscored: true
   })
   User.associate = function (models) {

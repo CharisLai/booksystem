@@ -1,0 +1,121 @@
+<div class="card card-body">
+    <div class="container-sm mt-3">
+        <div class="row d-f justify-content-center">
+            <div class="col-sm-6">
+                <div class="mb-4 text-center">
+                    <h1 class="h3 font-weight-normal mb-3">Sign Up</h1>
+                </div>
+                <form class="form-signup" action="/signup" method="POST">
+
+                    <h4>填寫個人資料</h4>
+
+                    <!-- Name -->
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="請輸入姓名" required>
+                        <div class="valid-feedback">
+                            Good!
+                        </div>
+                        <div class="invalid-feedback">
+                            This field is required!
+                        </div>
+                        <label for="name">姓名</label>
+                    </div>
+
+                    <!-- 稱謂 -->
+                    <fieldset class="mb-3" id="appellation">
+                        <legend class="col-form-label" for="appellation">稱謂&emsp;</legend>
+                        <div class="form-check-inline form-check">
+                            <input class="form-check-input" type="radio" name="appellation" id="mr" value="mr">
+                            <label class="form-check-label" for="mr">
+                                先生 Mr.
+                            </label>
+                        </div>
+
+                        <div class="form-check-inline form-check">
+                            <input class="form-check-input" type="radio" name="appellation" id="miss" value="miss">
+                            <label class="form-check-label" for="miss">
+                                小姐 Miss.
+                            </label>
+                        </div>
+
+                        <div class="form-check-inline form-check">
+                            <input class="form-check-input" type="radio" name="appellation" id="other" value="other">
+                            <label class="form-check-label" for="other">
+                                其他 Other
+                            </label>
+                        </div>
+                    </fieldset>
+                    <!--Email -->
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="請輸入Email" value=""
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+                        <div class="valid-feedback">
+                            Good!
+                        </div>
+                        <div class="invalid-feedback">
+                            This field is required!
+                        </div>
+                        <label for="email">Email&emsp;登入使用</label>
+                    </div>
+
+                    <!--password -->
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                            pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$" required>
+                        <label class="form-label" for="password">密碼</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" id="passwordCheck" name="passwordCheck" class="form-control"
+                            name="passwordCheck" placeholder="Password Check" pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$"
+                            required>
+                        <label class="form-label" for="passwordCheck">確認密碼</label>
+                    </div>
+
+                    <!--birthday -->
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="birthday" name="birthday" min="1900-01-01"
+                            max="2023-12-31">
+                        <label for="birthday">生日 ex 2023/01/01</label>
+                    </div>
+
+                    <h4>聯絡方式</h4>
+
+                    <!-- address -->
+                    <div class="form-floating row mb-3">
+                        <label for="address">地址</label>
+                        <div class="twzipcode mb-3">
+                            <div class="col-4 d-inline-block">
+                                <select name="address" data-role="county"
+                                    class="form-select col-4 form-floating">請選擇</select>
+                            </div>
+                            <div class="col-4 d-inline-block">
+                                <select name="address" data-role="district" class="form-select col-4">請選擇</select>
+                            </div>
+                            <input type="hidden" data-role="zipcode" />
+                        </div>
+                        <div class="form-floating d-inline-block">
+                            <input type="address" class="form-control" id="address" name="address" placeholder="address"
+                                required>
+                            <label for="floatingAddress">&emsp;路街段巷號樓室</label>
+                        </div>
+
+                    </div>
+
+                    <!-- phone number -->
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number"
+                            size="10" minlength="9" maxlength="10" required>
+                        <label for="phoneNumber">電話&emsp;02-123-4567&emsp;0912-345-678</label>
+                    </div>
+
+                    <div class="col-auto mb-3">
+                        <button id="submit-btn" type="submit" class="btn btn-primary">返回上一頁</button>
+                        <button id="submit-btn" type="submit" class="btn btn-primary">確認送出</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

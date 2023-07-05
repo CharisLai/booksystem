@@ -12,31 +12,34 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      appellation: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       email: {
         type: Sequelize.STRING,
         allowNull: false
       },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       birthday: {
-        type: Sequelize.DATEONLY
+        type: Sequelize.DATE,
+        allowNull: false
       },
       phone: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       address: {
         type: Sequelize.STRING
       },
-      readerType: {
-        type: Sequelize.STRING
-      },
-      expiryDate: {
-        type: Sequelize.DATEONLY
-      },
-      createdAt: {
+      created_At: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_At: {
         allowNull: false,
         type: Sequelize.DATE
       }
