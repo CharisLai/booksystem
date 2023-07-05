@@ -3,6 +3,7 @@ const router = express.Router()
 const admin = require('./modules/admin')
 const bookController = require('../controllers/book-controller')
 const userController = require('../controllers/user-controller')
+const { generalErrorHandler } = require('../middleware/error-handler') // error
 
 router.use('/admin', admin)
 
@@ -12,5 +13,5 @@ router.post('/signup', userController.signUp)
 router.get('/books', bookController.getBooks)
 
 router.use('/', (req, res) => res.redirect('/books'))
-
+router.use('/', generalErrorHandler) // error
 module.exports = router
