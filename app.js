@@ -3,6 +3,7 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const flash = require('connect-flash')
 const session = require('express-session')
+const passport = require('./config/passport')
 const routes = require('./routes')
 const methodOverride = require('method-override')
 const bcrypt = require('bcryptjs')
@@ -20,8 +21,14 @@ app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
-// connect-flash
+// express-session
 app.use(session({ secret: SESSION_SECRET, resave: false, saveUninitialized: false }))
+// passport init
+app.use(passport.initialize())
+// session
+app.use(passport.session())
+
+// connect-flash
 app.use(flash())
 app.use((req, res, next) => {
   res.locals.success_messages = req.flash('success_messages') // 設定 success_msg 訊息
